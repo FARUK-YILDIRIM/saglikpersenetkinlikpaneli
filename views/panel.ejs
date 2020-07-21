@@ -1,0 +1,101 @@
+<%- include template/header.ejs %>
+<%- include template/nav.ejs %>
+    <body id="page-top">
+        <div class="page">
+            <!-- Begin Page Content -->
+            <div class="page-content align-items-stretch">
+                <div class="content">
+                    <div class="container-fluid">
+                         <!-- Begin Page Header-->
+                         <div class="row">
+                                <div class="page-header">
+                                    <div class="d-flex align-items-center">
+                                        <h2 class="page-header-title">Etkinlik Oluştur</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Page Header -->
+                            <div class="row flex-row">
+                                <div class="col-12">
+                                    <!-- Form -->
+                                    <div class="widget has-shadow">
+                                        <!-- <div class="widget-header bordered no-actions d-flex align-items-center">
+                                            <h4>All Elements</h4>
+                                        </div> -->
+                                        <div class="widget-body">
+                                        <form class="form-horizontal" action="/events/add?_method=PUT" method="POST">
+
+                                            <div class="form-group row d-flex align-items-center mb-5">
+                                                    <label class="col-lg-3 form-control-label">Etkinlik Tarihi</label>
+                                                    <div class="col-lg-9">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="la la-calendar"></i>
+                                                                </span>
+                                                                <input name="eventDate" type="text" class="form-control" id="date">
+                                                                
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                    
+                                                <div class="form-group row d-flex align-items-center mb-5">
+                                                        <label class="col-lg-3 form-control-label">Etkinlik Saati</label>
+                                                        <div class="col-lg-9">
+                                                            <input name="time" type="text" class="form-control">
+                                                            <small>
+                                                                Ör: 14:00 veya 14:00 - 15:00
+                                                            </small>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row d-flex align-items-center mb-5">
+                                                    <label class="col-lg-3 form-control-label">Başlık</label>
+                                                    <div class="col-lg-9">
+                                                        <input name="title" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row d-flex align-items-center mb-5">
+                                                    <label class="col-lg-3 form-control-label">Açıklama</label>
+                                                    <div class="col-lg-9">
+                                                         <textarea name="desc" class="form-control" rows="3"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row d-flex align-items-center mb-5">
+                                                        <label class="col-lg-3 form-control-label">Paylaş içeriği</label>
+                                                        <div class="col-lg-9">
+                                                            <input name="share" type="text" class="form-control">
+                                                            <small>
+                                                                Sadece #hashtag de kullanılabilir.
+                                                            </small>
+                                                        </div>
+                                                </div>
+                                                <div class="text-right">
+                                                        <button class="btn btn-gradient-01" type="submit">Formu Gönder</button>
+                                                        <button class="btn btn-shadow" type="reset">Formu Temizle</button>
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- End Form -->
+                                </div>
+                            </div>
+                            <!-- End Row --> 
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                    </div>
+                    <!-- End Container -->
+                    <!-- Begin Page Footer-->
+                 
+                    
+                </div>
+            </div>
+            <!-- End Page Content -->
+         
+        </div>
+        <%- include template/footer.ejs %>
+
+    </body>
+</html>

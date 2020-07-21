@@ -1,0 +1,82 @@
+<%- include template/header.ejs %>
+<%- include template/nav.ejs %>
+    <body id="page-top">
+        <div class="page">
+            <!-- Begin Page Content -->
+            <div class="page-content align-items-stretch">
+                <div class="content">
+                    <div class="container-fluid">
+                         <!-- Begin Page Header-->
+                         <div class="row">
+                                <div class="page-header">
+                                    <div class="d-flex align-items-center">
+                                        <h2 class="page-header-title">Etkinlik Listesi</h2>
+                                        <div>
+                                             <button type="button" class="btn btn-outline-primary mr-1 mb-2"><a href="/yeni-etkinlik">Yeni Etkinlik</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Page Header -->
+                        <% if (messages.info ) { %>
+                            <div class="alert alert-warning alert-dissmissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                                <%=messages.info %>
+                            </div>
+                        <% } %>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <!-- Sorting -->
+                                <div class="widget has-shadow">
+                                    <div class="widget-header bordered no-actions align-items-center">
+                                        <h4>Etkinlik Listesi</h4>
+                                    </div>
+                                    <div class="widget-body">
+                                        <div class="table-responsive">
+                                            <table id="sorting-table" class="table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Etkinlik Adı</th>
+                                                        <th>Etkinlik Tarihi</th>
+                                                        <th>Etkinlik Saati</th>
+                                                        <th>Eylemler</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                <% eventList.map(function(a) { %>
+                                                    <% a.eventData.map(function(b){%>
+                                                        <tr>
+                                                            <td><span class="text-primary"><%= b.title %></span></td>
+                                                            <td><%= a.eventDate %></td>
+                                                            <td><%= b.time %></td>
+                                                            <td class="td-actions">
+                                                                <a><i class="la la-edit edit"></i></a>
+                                                                <a href="/events/delete/<%= a._id %>/<%= b._id %>"</a><i class="la la-trash delete"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <% }); %>
+                                                <% }); %>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Sorting -->
+                                
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                    </div>
+                    <!-- End Container -->
+                    <!-- Begin Page Footer-->
+                 
+                    
+                </div>
+            </div>
+            <!-- End Page Content -->
+         
+        </div>
+        <%- include template/footer.ejs %>
+
+    </body>
+</html>
